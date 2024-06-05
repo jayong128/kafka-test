@@ -1,0 +1,31 @@
+server:
+  port: 8888
+
+spring:
+  profiles:
+    active: native
+  application:
+    name: config-service
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: guest
+    password: guest
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: file:///C:\\Users\\novo2\\native-local-repo
+#        git:
+#          uri: https://github.com/jayong128/spring-cloud-test.git
+          uri: file://C:\Users\novo2\git-local-repo
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,busrefresh
+logging:
+  level:
+    com.example.configservice: DEBUG
+encrypt:
+  key: qwerty0123
